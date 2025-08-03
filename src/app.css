@@ -3,19 +3,56 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+/* Custom Fonts for Skuulbag Rainbow Layout */
+@font-face {
+  font-family: 'MilkyWalky';
+  src: url('/GsapResources/fonts/MilkyWalky-Regular.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url('/GsapResources/fonts/IndieFlower-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/GsapResources/fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 100 800;
+}
+
 :root {
 	--font-body:
 		Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
 		'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
+	
+	/* Custom Fonts */
+	--font-milky-walky: 'MilkyWalky', Georgia, serif;
+	--font-indie-flower: 'IndieFlower', 'Comic Sans MS', cursive;
+	--font-jetbrains-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+	
+	/* Original Colors */
 	--color-bg-0: rgb(202, 216, 228);
 	--color-bg-1: hsl(209, 36%, 86%);
 	--color-bg-2: hsl(224, 44%, 95%);
 	--color-theme-1: #ff3e00;
 	--color-theme-2: #4075a6;
 	--color-text: rgba(0, 0, 0, 0.7);
+	
+	/* Rainbow Theme Colors */
+	--rainbow-primary: #667eea;
+	--rainbow-secondary: #764ba2;
+	--rainbow-accent: #f093fb;
+	--rainbow-light: rgba(255, 255, 255, 0.9);
+	--rainbow-dark: rgba(0, 0, 0, 0.8);
+	
+	/* Layout */
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+	
 	font-family: var(--font-body);
 	color: var(--color-text);
 }
@@ -105,4 +142,46 @@ button:focus:not(:focus-visible) {
 	position: absolute;
 	width: 1px;
 	white-space: nowrap;
+}
+
+/* Rainbow Layout Utility Classes */
+.font-milky-walky {
+	font-family: var(--font-milky-walky);
+}
+
+.font-indie-flower {
+	font-family: var(--font-indie-flower);
+}
+
+.font-jetbrains-mono {
+	font-family: var(--font-jetbrains-mono);
+	font-weight: 400;
+	font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+.rainbow-gradient {
+	background: linear-gradient(135deg, var(--rainbow-primary) 0%, var(--rainbow-secondary) 100%);
+}
+
+.rainbow-text-gradient {
+	background: linear-gradient(135deg, var(--rainbow-primary), var(--rainbow-accent), var(--rainbow-secondary));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.glass-effect {
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* GSAP Performance Optimizations */
+.gsap-optimized {
+	will-change: transform, opacity;
+	transform: translateZ(0);
+}
+
+.no-scroll {
+	overflow: hidden;
 }
