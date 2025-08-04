@@ -88,9 +88,6 @@
 				<li class="nav-item" aria-current={page.url.pathname === '/' ? 'page' : undefined}>
 					<a href="/" class="font-indie-flower">Home</a>
 				</li>
-				<li class="nav-item" aria-current={page.url.pathname === '/collection' ? 'page' : undefined}>
-					<a href="/collection" class="font-indie-flower">Collection</a>
-				</li>
 				<li class="nav-item" aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
 					<a href="/about" class="font-indie-flower">About</a>
 				</li>
@@ -117,7 +114,6 @@
 		<nav>
 			<ul>
 				<li><a href="/" class="font-indie-flower" on:click={toggleMobileMenu}>Home</a></li>
-				<li><a href="/collection" class="font-indie-flower" on:click={toggleMobileMenu}>Collection</a></li>
 				<li><a href="/about" class="font-indie-flower" on:click={toggleMobileMenu}>About</a></li>
 				<li><a href="/contact" class="font-indie-flower" on:click={toggleMobileMenu}>Contact</a></li>
 			</ul>

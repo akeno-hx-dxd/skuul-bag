@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a SvelteKit application with TypeScript and TailwindCSS, created using the `sv` CLI tool. The project includes a Wordle-inspired game called "Sverdle" as a demo feature.
+This is a SvelteKit stationery exhibition SPA with TypeScript, TailwindCSS, and GSAP animations. The application showcases Skuulbag's product catalog with a rainbow theme and interactive features.
 
 ## Development Commands
 
@@ -20,32 +20,38 @@ This is a SvelteKit application with TypeScript and TailwindCSS, created using t
 - Uses SvelteKit's file-based routing in `src/routes/`
 - `+layout.svelte` provides the main app layout with Header component
 - `+page.svelte` files define route components
-- `+page.server.ts` files handle server-side logic and actions
 - `+page.ts` files handle client-side page data loading
 
 ### Key Components
-- **Header** (`src/routes/Header.svelte`): Navigation component
-- **Counter** (`src/routes/Counter.svelte`): Interactive counter demo
-- **Sverdle Game** (`src/routes/sverdle/`): Complete Wordle clone with:
-  - `game.ts`: Core game logic class
-  - `+page.server.ts`: Server actions for game state management
-  - `words.server.ts`: Word lists for the game
-  - Cookie-based game state persistence
+- **Header** (`src/routes/Header.svelte`): Rainbow navigation with glassmorphism effects
+- **Home Page** (`src/routes/+page.svelte`): Product gallery with modal functionality
+- **About Page** (`src/routes/about/+page.svelte`): Company information with rainbow scribble effects
+- **Contact Page** (`src/routes/contact/+page.svelte`): Contact form with mailto functionality
 
-### Styling
-- Uses TailwindCSS v4 with Vite plugin
-- Custom CSS in component `<style>` blocks
-- Global styles in `src/app.css`
+### Styling & Animations
+- **Custom fonts**: MilkyWalky, IndieFlower, JetBrains Mono
+- **GSAP animations**: ScrollTrigger, timeline-based animations
+- **Rainbow theme**: Custom CSS variables for consistent theming
+- **Glassmorphism**: Backdrop blur effects throughout
+- **Responsive design**: Mobile-first approach with breakpoints
+
+### Features
+- **Product modal**: Detailed product view with tags and descriptions
+- **Contact form**: Professional form with predefined subjects
+- **Lazy loading**: Progressive image loading for performance
+- **Rainbow effects**: Animated scribbles and gradients
+- **Accessibility**: ARIA labels, keyboard navigation, screen reader support
 
 ### Build Configuration
 - **Vite**: Main build tool with TypeScript support
 - **SvelteKit**: Framework with auto adapter
-- **Plugins**: TailwindCSS, SvelteKit, and devtools-json for development
-- Uses Bun as package manager (bun.lock present)
+- **GSAP**: Animation library for smooth interactions
+- **Custom assets**: 3D icons, backgrounds, and fonts in static folder
 
 ## Development Notes
 
-- Server actions handle form submissions and game logic server-side
-- Cookie-based state management for the Sverdle game
-- TypeScript strict mode enabled
-- Svelte 5 with runes syntax (`$props()`, `{@render children()}`)
+- **Performance optimized**: Reduced DOM elements, efficient animations
+- **TypeScript strict mode**: Full type safety enabled
+- **Svelte 5**: Uses modern runes syntax (`$props()`, `$derived()`)
+- **Responsive**: Optimized for all device sizes
+- **SEO ready**: Proper meta tags and semantic HTML

@@ -14,6 +14,23 @@
 </div>
 
 <style>
+	/* Chrome scrollbar fix at layout level */
+	:global(html::-webkit-scrollbar),
+	:global(body::-webkit-scrollbar) {
+		display: none !important;
+		width: 0px !important;
+		height: 0px !important;
+		background: transparent !important;
+	}
+
+	:global(html),
+	:global(body) {
+		scrollbar-width: none !important;
+		-ms-overflow-style: none !important;
+		overflow-y: auto !important;
+		overflow-x: hidden !important;
+	}
+
 	.app {
 		min-height: 100vh;
 		width: 100%;
